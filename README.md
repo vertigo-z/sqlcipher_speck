@@ -89,6 +89,22 @@ static void speck128_ctr(const uint64_t rk[SPECK128_256_ROUNDS],
 1. **Configure:** `./configure --with-tempstore=yes CFLAGS="-DSQLITE_HAS_CODEC -DSQLCIPHER_CRYPTO_CUSTOM=speck_register_provider -DSQLITE_EXTRA_INIT=sqlcipher_extra_init -DSQLITE_EXTRA_SHUTDOWN=sqlcipher_extra_shutdown -DSQLITE_THREADSAFE=1 -DSQLITE_TEMP_STORE=2" AMALGAMATION_EXTRA_SRC="src/crypto_speck.c" 2>&1`
 2. **Compile:** `make EXTRA_SRC=src/crypto_speck.c`
 
+**Using SQLCipher_SPECK with node-sqlite3:**
+1. Follow "Compiling SQLCipher_SPECK" steps
+2. Create staging area:
+   * `mkdir -p /tmp/sqlite3-build`
+   * `curl -sL https://registry.npmjs.org/sqlite3/-/sqlite3-6.0.1.tgz -o /tmp/sqlite3-build/sqlite3-6.0.1.tgz`
+   * `cd /tmp/sqlite3-build`
+3. Move SQCipher header and amalgamation files to `/tmp/sqlite3-build`:
+   * `cp /sqlcipher/sqlite3.c /tmp/sqlite3-build/package/deps`
+   * `cp /sqlcipher/sqlite3.h /tmp/sqlite3-build/package/deps`
+   * `cp /sqlcipher/sqliteInt.h /tmp/sqlite3-build/package/deps`
+   * `cp /sqlcipher/sqlite3ext.h /tmp/sqlite3-build/package/deps`
+4. Repack files:
+   * `tar -czf sqlite3-6.0.1-patched.tgz package/`
+5. Enter npm directory and install:
+   * `npm install /tmp/sqlite3-build/sqlite3-6.0.1-patched.tgz --build-from-source`
+
 ---
 
 ## SQLCipher Features:
