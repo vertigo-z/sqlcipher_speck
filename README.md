@@ -95,6 +95,7 @@ static void speck128_ctr(const uint64_t rk[SPECK128_256_ROUNDS],
    * `mkdir -p /tmp/sqlite3-build`
    * `curl -sL https://registry.npmjs.org/sqlite3/-/sqlite3-6.0.1.tgz -o /tmp/sqlite3-build/sqlite3-6.0.1.tgz`
    * `cd /tmp/sqlite3-build`
+   * `tar -xzf sqlite3-6.0.1.tgz`
 3. Move SQCipher header and amalgamation files to `/tmp/sqlite3-build`:
    * `cp /sqlcipher/sqlite3.c /tmp/sqlite3-build/package/deps`
    * `cp /sqlcipher/sqlite3.h /tmp/sqlite3-build/package/deps`
