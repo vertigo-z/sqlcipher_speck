@@ -105,6 +105,7 @@ static void speck128_ctr(const uint64_t rk[SPECK128_256_ROUNDS],
    * `tar -czf sqlite3-6.0.1-patched.tgz package/`
 5. Enter npm directory and install:
    * `npm install /tmp/sqlite3-build/sqlite3-6.0.1-patched.tgz --build-from-source`
+   * Add `CFLAGS="-D_GNU_SOURCE" CXXFLAGS="-D_GNU_SOURCE"` before npm command on linux
 
 ---
 
