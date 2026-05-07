@@ -97,10 +97,10 @@ static void speck128_ctr(const uint64_t rk[SPECK128_256_ROUNDS],
    * `cd /tmp/sqlite3-build`
    * `tar -xzf sqlite3-6.0.1.tgz`
 3. Move SQCipher header and amalgamation files to `/tmp/sqlite3-build`:
-   * `cp /sqlcipher/sqlite3.c /tmp/sqlite3-build/package/deps`
-   * `cp /sqlcipher/sqlite3.h /tmp/sqlite3-build/package/deps`
-   * `cp /sqlcipher/sqliteInt.h /tmp/sqlite3-build/package/deps`
-   * `cp /sqlcipher/sqlite3ext.h /tmp/sqlite3-build/package/deps`
+   * `cp /sqlcipher_speck/sqlite3.c /tmp/sqlite3-build/package/deps`
+   * `cp /sqlcipher_speck/sqlite3.h /tmp/sqlite3-build/package/deps`
+   * `cp /sqlcipher_speck/sqliteInt.h /tmp/sqlite3-build/package/deps`
+   * `cp /sqlcipher_speck/sqlite3ext.h /tmp/sqlite3-build/package/deps`
 4. Repack files:
    * `tar -czf sqlite3-6.0.1-patched.tgz package/`
 5. Enter npm directory and install:
