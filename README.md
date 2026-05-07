@@ -93,7 +93,7 @@ static void speck128_ctr(const uint64_t rk[SPECK128_256_ROUNDS],
 1. Follow "Compiling SQLCipher_SPECK" steps
 2. Create staging area:
    * `mkdir -p /tmp/sqlite3-build`
-   * `curl -sL https://registry.npmjs.org/sqlite3/-/sqlite3-6.0.1.tgz -o /tmp/sqlite3-build/sqlite3-6.0.1.tgz`
+   * `curl -sL https://registry.npmjs.org/sqlite3/sqlite3-6.0.1.tgz -o /tmp/sqlite3-build/sqlite3-6.0.1.tgz`
    * `cd /tmp/sqlite3-build`
    * `tar -xzf sqlite3-6.0.1.tgz`
 3. Move SQCipher header and amalgamation files to `/tmp/sqlite3-build`:
