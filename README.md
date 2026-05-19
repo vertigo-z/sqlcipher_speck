@@ -1,5 +1,7 @@
 ## SQLCipher_SPECK
 
+<a href="https://deepwiki.com/vertigo6622/sqlcipher_speck"><img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki"></a>
+
 SQLCipher_SPECK is a standalone fork of the SQLCipher library that implements SPECK-256 as the default cipher provider. 
 
 SQLCipher_SPECK uses a 256 bit key and encrypts data in blocks of 128 bits, with a total of 34 independent rounds of encryption. Since this fork uses CTR/counter mode, the encryption includes incrementing counter that is XOR'd with the data depending on its position. This differs from CBC/block mode becuase in CBC mode, there is no counter, and each block is XOR'd with the previous block. CTR mode works better for situations where we want to avoid padding, and especially when the length of the encrypted data is changing frequently.
